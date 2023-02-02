@@ -5,11 +5,19 @@ import edu.frostburg.cosc241.tester.L0000Test;
 public class SKLab0000Driver {
 
 	public static void main(String[] args) {
-//		SKL0000 lab = new SKL0000();
-//		L0000Test test = new L0000Test("Steve", "today", lab);
-//		test.run();
+		SKL0000 lab = new SKL0000();
+		L0000Test test = new L0000Test("Steve", "today", lab);
+		test.run();
 		
 		runProgram();
+	}
+	
+	public static void runReturnExample() {
+		int x = getAnInt();
+	}
+	
+	public static int getAnInt() {
+		return 999;
 	}
 	
 	public static void runProgram() {
