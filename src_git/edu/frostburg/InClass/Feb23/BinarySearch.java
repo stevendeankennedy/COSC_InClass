@@ -9,16 +9,20 @@ public class BinarySearch {
 		for (int i=0; i<list.length; i++) {
 			list[i] = i*2;
 		}
-		int target = 5063;
+		int target = 5064;
 		
 		BinarySearch algo = new BinarySearch();
-		int index = algo.search(list, 0, list.length-1, target);
+		int index = algo.search(list, target);
 		
 		if (index == -1) {
 			System.err.println("Not found :(");
 		} else {
 			System.out.printf("Found %d at index %d%n", target, index);
 		}
+	}
+	
+	public int search(int[] list, int target) {
+		return search(list, 0, list.length-1, target);
 	}
 	
 	/**
@@ -29,7 +33,7 @@ public class BinarySearch {
 	 * @param r right border of list
 	 * @param target index of what we are finding, returns -1 if not found
 	 */
-	public int search(int[] list, int l, int r, int target) {
+	private int search(int[] list, int l, int r, int target) {
 		// get middle
 		int mid = (l + r) / 2; // we can't just get len/2 because we aren't going to split the list
 		
