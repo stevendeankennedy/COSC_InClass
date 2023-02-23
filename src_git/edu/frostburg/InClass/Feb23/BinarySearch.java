@@ -9,12 +9,16 @@ public class BinarySearch {
 		for (int i=0; i<list.length; i++) {
 			list[i] = i*2;
 		}
-		int target = 10000;
+		int target = 5063;
 		
 		BinarySearch algo = new BinarySearch();
 		int index = algo.search(list, 0, list.length-1, target);
 		
-		System.out.printf("Found %d at index %d%n", target, index);
+		if (index == -1) {
+			System.err.println("Not found :(");
+		} else {
+			System.out.printf("Found %d at index %d%n", target, index);
+		}
 	}
 	
 	/**
@@ -28,6 +32,12 @@ public class BinarySearch {
 	public int search(int[] list, int l, int r, int target) {
 		// get middle
 		int mid = (l + r) / 2; // we can't just get len/2 because we aren't going to split the list
+		
+		// "Don't cross the streams!" - Hilarious 80's movie character
+		if (l > r || r < l) {
+			return -1;
+		}
+		
 		// compare target to middle
 		if (list[mid] == target) {
 			// if ==, done
