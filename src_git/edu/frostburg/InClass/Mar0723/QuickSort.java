@@ -25,14 +25,7 @@ public class QuickSort {
 				Utility.swap(list, i, pivotIndex--);
 		}
 		Utility.swap(list, l, pivotIndex);
-		
-//		// is it working?
-//		System.out.println("Pivot: " + pivot);
-//		for (int i=l; i<r; i++) {
-//			System.out.print(" " + list[i] + " ");
-//		}
-//		System.out.println();
-		
-		return l;
+
+		return pivotIndex;
 	}
 }
