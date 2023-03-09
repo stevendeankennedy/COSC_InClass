@@ -9,6 +9,20 @@ public class Example {
 		ex.printLettersR(10);
 		
 		ex.printLettersR2(10);
+		
+		ex.run2();
+	}
+	
+	public void run2() {
+		Student s = new Student("1");
+		Person p = new Student("2");
+		ExampleInterface i = new Student("3");
+		
+		s.randomStudentThing();
+//		p.randomStudentThing();
+		System.out.println(s);
+		System.out.println(p);
+		System.out.println(i);
 	}
 	
 	public void run() {

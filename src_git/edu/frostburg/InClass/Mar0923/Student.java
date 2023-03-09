@@ -9,10 +9,15 @@ public class Student extends Person {
 
 	public Student(String name) {
 		super(name);
+		System.out.println("more code");
 	}
 
+	public void randomStudentThing() {
+		System.out.println("#");
+	}
+	
 	public String toString() {
-		return name;
+		return "STUDENT: " + name;
 	}
 	
 	public int a() {
