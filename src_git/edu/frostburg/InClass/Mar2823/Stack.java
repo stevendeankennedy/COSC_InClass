@@ -14,7 +14,7 @@ public class Stack {
 	}
 	
 	public Stack() {
-		this(25);
+		this(DEFAULT_SIZE);
 	}
 	
 	// -------------------------------------------------
