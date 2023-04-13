@@ -7,7 +7,29 @@ public class Example {
 		Example test = new Example();
 //		test.runTest1(list);
 //		test.runTest2(new EXLinkedList());
-		test.runTest3(new EXLinkedList());
+//		test.runTest3(new EXLinkedList());
+//		test.runTest4(new EXLinkedList());
+		
+		test.runQueueTest1(new EXQueue());
+	}
+	
+	public void runQueueTest1(EXQueue q) {
+		fill(q, 10);
+		System.out.println(q);
+		
+		int removeThisMany = 3;
+		
+		for (int i=0; i<removeThisMany; i++) {
+			System.out.println("Dequeue: "+q.deq());
+		}
+		
+		System.out.println(q);
+	}
+	
+	private void fill(EXQueue q, int n) {
+		for (int i=0; i<n; i++) {
+			q.enq(i);
+		}
 	}
 	
 	public void runTest1(EXLinkedList example) {
@@ -33,6 +55,24 @@ public class Example {
 		// insert in the middle
 		example.add(99, 3);
 		example.add(999, 7);
+	}
+	
+	public void runTest4(EXLinkedList example) {
+		fill(example, 5);
+		System.out.println(example);
+		
+		for (int i=0; i<3; i++) {
+			System.out.println("Remove:" + example.remFirst());
+		}
+		
+		System.out.println(example);
+		
+	}
+	
+	private void fill(EXLinkedList list, int n) {
+		for (int i=0; i<n; i++) {
+			list.addLast(i);
+		}
 	}
 
 }

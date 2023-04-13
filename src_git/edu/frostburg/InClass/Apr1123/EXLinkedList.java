@@ -10,7 +10,7 @@ public class EXLinkedList {
 	EXNode head; // always points to the first element in the list
 	int count;
 	
-	static class EXNode {
+	protected static class EXNode {
 		int data;
 		EXNode next; // this is the arrow from our diagram
 		
@@ -87,5 +87,31 @@ public class EXLinkedList {
 			current.next = x;
 			count += 1;
 		}
+	}
+	
+	// TODO: Remove first method
+	public int remFirst() {
+		int temp = head.data; // this is what we will return (aka the "Returner")
+		head = head.next;
+		count = count - 1;
+		
+		return temp;
+	}
+	
+	@Override
+	public String toString() {
+		if (count == 0) {
+			return "-";
+		}
+		// create empty string
+		String toReturn = "";
+		
+		EXNode v = head;
+		while (v.next != null) {
+			toReturn += v.data + ", ";
+			v = v.next;
+		}
+		toReturn += v.data;
+		return toReturn;
 	}
 }
