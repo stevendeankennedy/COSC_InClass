@@ -89,8 +89,11 @@ public class EXLinkedList {
 		}
 	}
 	
-	// TODO: Remove first method
+	// Remove first method
 	public int remFirst() {
+		if (count == 0) {
+			return -1;
+		}
 		int temp = head.data; // this is what we will return (aka the "Returner")
 		head = head.next;
 		count = count - 1;
