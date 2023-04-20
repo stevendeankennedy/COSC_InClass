@@ -53,7 +53,40 @@ public class BinTreeExample {
 		n4.left = n8;
 		
 		return new EXBinTree(n1);
+	}
+	
+	public EXBinTree makeImbalancedTree1() {
+		BiNode n1 = new BiNode(1, null, null); // A
+		BiNode n2 = new BiNode(2, null, null); // B
+		BiNode n3 = new BiNode(3, null, null); // C
+		BiNode nx = new BiNode(-1, null, null); // x
+		BiNode ny = new BiNode(-2, null, null); // y
+		BiNode nz = new BiNode(-3, null, null); // z
 
+		n3.left = nx;
+		n3.right = ny;
+		n2.right = nz;
+		n1.left = n2;
+		n2.left = n3;
+		
+		return new EXBinTree(n1);
+	}
+	
+	public EXBinTree makeImbalancedTree2() {
+		BiNode n1 = new BiNode(1, null, null); // A
+		BiNode n2 = new BiNode(2, null, null); // B
+		BiNode n3 = new BiNode(3, null, null); // C
+		BiNode nx = new BiNode(-1, null, null); // x
+		BiNode ny = new BiNode(-2, null, null); // y
+		BiNode nz = new BiNode(-3, null, null); // z
+		
+		n1.right = n2;
+		n2.left = n3;
+		n3.left = nx;
+		n3.right = ny;
+		n2.right = nz;
+		
+		return new EXBinTree(n1);
 	}
 
 }
