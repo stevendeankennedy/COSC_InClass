@@ -6,7 +6,24 @@ public class BinTreeExample {
 		BinTreeExample ex = new BinTreeExample();
 		EXBinTree tree = ex.makeTree1();
 		
-		ex.runExample1(tree);
+//		ex.runExample1(tree);
+//		ex.runExample2(ex.makeImbalancedTreeLL());
+//		ex.runExample3(ex.makeImbalancedTreeRR());
+		ex.runExample4(ex.makeImbalancedTreeRL());
+	}
+	
+	// double rotate RL
+	private void runExample4(EXBinTree tree) {
+		tree.rotateRL();
+	}
+	
+	// rotate left
+	private void runExample3(EXBinTree tree) {
+		tree.rotateLeft();
+	}
+	
+	private void runExample2(EXBinTree tree) {
+		tree.rotateRight();
 	}
 	
 	private void runExample1(EXBinTree tree) {
@@ -55,7 +72,7 @@ public class BinTreeExample {
 		return new EXBinTree(n1);
 	}
 	
-	public EXBinTree makeImbalancedTree1() {
+	public EXBinTree makeImbalancedTreeLL() {
 		BiNode n1 = new BiNode(1, null, null); // A
 		BiNode n2 = new BiNode(2, null, null); // B
 		BiNode n3 = new BiNode(3, null, null); // C
@@ -72,7 +89,24 @@ public class BinTreeExample {
 		return new EXBinTree(n1);
 	}
 	
-	public EXBinTree makeImbalancedTree2() {
+	public EXBinTree makeImbalancedTreeRR() {
+		BiNode n1 = new BiNode(1, null, null); // A
+		BiNode n2 = new BiNode(2, null, null); // B
+		BiNode n3 = new BiNode(3, null, null); // C
+		BiNode nx = new BiNode(-1, null, null); // x
+		BiNode ny = new BiNode(-2, null, null); // y
+		BiNode nz = new BiNode(-3, null, null); // z
+
+		n1.right = n3;
+		n3.right = n2;
+		n3.left = nx;
+		n2.left = ny;
+		n2.right = nz;
+		
+		return new EXBinTree(n1);
+	}
+	
+	public EXBinTree makeImbalancedTreeRL() {
 		BiNode n1 = new BiNode(1, null, null); // A
 		BiNode n2 = new BiNode(2, null, null); // B
 		BiNode n3 = new BiNode(3, null, null); // C
